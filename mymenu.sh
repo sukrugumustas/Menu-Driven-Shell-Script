@@ -29,65 +29,71 @@ do
 	#	Reading user's choice and comparing it with cases.
 	read -r choice;
 	case $choice in
-		1) echo;
-		echo -n "Please provide a filename: ";
-		#	We will get argument(s) from user. If user enters arguments more than one
-		#	only first one will be stored in arg1, remaining string will be in arg2.
-		#	This process is applied to all other cases, in case of number of inputs more
-		#	than wanted.
-		read -r arg1 arg2;
-		if [[ $arg1 ]] && ! [[ $arg2 ]]; then
-			exec ./myprog1.sh "$arg1";
-		elif [[ $arg1 && $arg2 ]]; then
-			exec ./myprog1.sh "$arg1" "$arg2";
-		else
-			exec ./myprog1.sh;
-		fi
+		1)	echo;
+			echo -n "Please provide a filename: ";
+			#	We will get argument(s) from user. If user enters arguments more than one
+			#	only first one will be stored in arg1, remaining string will be in arg2.
+			#	This process is applied to all other cases, in case of number of inputs more
+			#	than wanted.
+			read -r arg1 arg2;
+			if [[ $arg1 ]] && ! [[ $arg2 ]]; then
+				exec ./myprog1.sh "$arg1";
+			elif [[ $arg1 && $arg2 ]]; then
+				exec ./myprog1.sh "$arg1" "$arg2";
+			else
+				exec ./myprog1.sh;
+			fi
 		;;
-		2) echo;
-		echo -n "You may provide a path or keep it empty: ";
-		read -r arg1 arg2;
-		if [[ $arg1 ]] && ! [[ $arg2 ]]; then
-			exec ./myprog1.sh "$arg1";
-		elif [[ $arg1 && $arg2 ]]; then
-			exec ./myprog1.sh "$arg1" "$arg2";
-		else
-			exec ./myprog1.sh;
-		fi
+		
+		2)	echo;
+			echo -n "You may provide a path or keep it empty: ";
+			read -r arg1 arg2;
+			if [[ $arg1 ]] && ! [[ $arg2 ]]; then
+				exec ./myprog1.sh "$arg1";
+			elif [[ $arg1 && $arg2 ]]; then
+				exec ./myprog1.sh "$arg1" "$arg2";
+			else
+				exec ./myprog1.sh;
+			fi
 		;;
-		3) echo;
-		echo -n "Please provide a filename and two words to change: ";
-		read -r arg1 arg2 arg3 arg4;
-		if [[ $arg1 && $arg2 && $arg3 ]] && ! [[ $arg4 ]]; then
-			exec ./myprog3.sh "$arg1" "$arg2" "$arg3";
-		else
-			exec ./myprog3.sh "$arg1" "$arg2" "$arg3" "$arg4";
-		fi
+		
+		3)	echo;
+			echo -n "Please provide a filename and two words to change: ";
+			read -r arg1 arg2 arg3 arg4;
+			if [[ $arg1 && $arg2 && $arg3 ]] && ! [[ $arg4 ]]; then
+				exec ./myprog3.sh "$arg1" "$arg2" "$arg3";
+			else
+				exec ./myprog3.sh "$arg1" "$arg2" "$arg3" "$arg4";
+			fi
 		;;
-		4) echo;
-		echo -n "You may provide a path or keep it empty: ";
-		read -r arg1 arg2;
-		if [[ $arg1 ]] && ! [[ $arg2 ]]; then
-			exec ./myprog4.sh "$arg1";
-		elif [[ $arg1 && $arg2 ]]; then
-			exec ./myprog4.sh "$arg1" "$arg2";
-		else
-			exec ./myprog4.sh;
-		fi
+		
+		4)	echo;
+			echo -n "You may provide a path or keep it empty: ";
+			read -r arg1 arg2;
+			if [[ $arg1 ]] && ! [[ $arg2 ]]; then
+				exec ./myprog4.sh "$arg1";
+			elif [[ $arg1 && $arg2 ]]; then
+				exec ./myprog4.sh "$arg1" "$arg2";
+			else
+				exec ./myprog4.sh;
+			fi
 		;;
-		5) echo;
-		echo -n "Please enter an integer: ";
-		read -r arg1 arg2;
-		if [[ $arg1 ]] && ! [[ $arg2 ]]; then
-			exec ./myprog5.sh "$arg1";
-		elif [[ $arg1 && $arg2 ]]; then
-			exec ./myprog5.sh "$arg1" "$arg2";
-		else
-			exec ./myprog5.sh;
-		fi
+		
+		5)	echo;
+			echo -n "Please enter an integer: ";
+			read -r arg1 arg2;
+			if [[ $arg1 ]] && ! [[ $arg2 ]]; then
+				exec ./myprog5.sh "$arg1";
+			elif [[ $arg1 && $arg2 ]]; then
+				exec ./myprog5.sh "$arg1" "$arg2";
+			else
+				exec ./myprog5.sh;
+			fi
 		;;
-		6) echo "Bye Bye!"; echo; exit 1;;
-		*) echo;
-		echo "Please give an input between 1-6!";;
+		
+		6)	echo "Bye Bye!"; echo; exit 1;;
+		
+		*)	echo;
+			echo "Please give an input between 1-6!";;
 	esac
 done
