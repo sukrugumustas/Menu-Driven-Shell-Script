@@ -1,7 +1,5 @@
 #!/bin/bash
 #	myprog4.sh
-#	150114032, Şükrü Gümüştaş
-#	150115066, Atakan Ülgen
 
 #	This is the path to execute menu again.
 path=$PWD;

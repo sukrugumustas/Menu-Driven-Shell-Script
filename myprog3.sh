@@ -1,7 +1,5 @@
 #!/bin/bash
 #	myprog3.sh
-#	150114032 - Şükrü Gümüştaş
-#	150115066 - Atakan Ülgen
 
 #	If the user doesn't provide exactly 3 arguments, it will be prompt.
 if [[ "$#" -ne 3 ]]; then

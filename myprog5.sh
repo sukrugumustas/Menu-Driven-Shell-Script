@@ -1,7 +1,5 @@
 #!/bin/bash
 # myprog5.sh
-# 150114032, Şükrü Gümüştaş
-# 150115066, Atakan Ülgen
 
 # If the user has given no argument, then the user will be prompted.
 # "$#" command gives us the argument number, "-eq" command checks equality.

@@ -1,16 +1,14 @@
 #!/bin/bash
 # mymenu.sh
-# 150114032, Şükrü Gümüştaş
-# 150115066, Atakan Ülgen
 
 #	If user provides an argument, program won't work.
 if [[ "$#" -ne 0 ]]; then
 	echo "I don't want you to give any arguments!";
 	exit 1;
 fi
-#	Otherwis, it will show the menu to user, user will select one choice.
-#	If choice is exit, it will end the process.
-#	If choice is not legit, user will be prompted.
+#	Otherwise, it will show a menu to the user and the user will select one choice.
+#	If the choice is exit, it will end the process.
+#	If the choice is not legit, the user will be prompted.
 for i in $0; do
 	chmod +x "$i";
 done
@@ -26,13 +24,13 @@ do
 	echo "6. Exit";
 	echo "=====================================";
 	echo -n "Enter your menu choice [1-6]: "
-	#	Reading user's choice and comparing it with cases.
+	#	Reading the user's choice and comparing it with cases.
 	read -r choice;
 	case $choice in
 		1)	echo;
 			echo -n "Please provide a filename: ";
 			#	We will get argument(s) from user. If user enters arguments more than one
-			#	only first one will be stored in arg1, remaining string will be in arg2.
+			#	only the first one will be stored in arg1, remaining string will be in arg2.
 			#	This process is applied to all other cases, in case of number of inputs more
 			#	than wanted.
 			read -r arg1 arg2;
@@ -49,11 +47,11 @@ do
 			echo -n "You may provide a path or keep it empty: ";
 			read -r arg1 arg2;
 			if [[ $arg1 ]] && ! [[ $arg2 ]]; then
-				exec ./myprog1.sh "$arg1";
+				exec ./myprog2.sh "$arg1";
 			elif [[ $arg1 && $arg2 ]]; then
-				exec ./myprog1.sh "$arg1" "$arg2";
+				exec ./myprog2.sh "$arg1" "$arg2";
 			else
-				exec ./myprog1.sh;
+				exec ./myprog2.sh;
 			fi
 		;;
 		
